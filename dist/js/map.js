@@ -1,0 +1,1 @@
+function initMap(){var a={lat:40.109393,lng:-88.226796};map=new google.maps.Map(document.getElementById("map"),{center:a,zoom:14}),infoWindow=new google.maps.InfoWindow({content:""}),vm=new ViewModel,ko.applyBindings(vm)}var map,infoWindow,vm;

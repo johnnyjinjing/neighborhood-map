@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>Food near UIUC</title>
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<link href="css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container container-fill">
+			<div class="row fill">
+				<div class="col-md-3">
+					<h3>Food near UIUC</h3>
+					<input placeholder="Search..." data-bind="value:filterString, valueUpdate:'afterkeydown'">
+					<!--<button data-bind="click:filter" class="btn btn-primary">Filter</button>-->
+					<ul class="list-unstyled" data-bind="foreach:filteredMapLocationList">
+						<li data-bind="text:name, click:$parent.select, style:{color:isSelected()?'#00ff00':'black'}"></li>
+					</ul>
+				</div>
+				<div class="col-md-9 fill">
+					<div id="map"></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="js/jquery.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="js/bootstrap.js"></script>
+		<!-- KnockoutJS -->
+		<script src="js/knockout-3.4.0.js"></script>
+
+		<script src="js/model.js"></script>
+		<!-- oauth related -->
+		<script src="js/hmac-sha1.js"></script>
+		<script src="js/enc-base64-min.js"></script>
+		<script src="js/oauth-1.0a.js"></script>
+		<script src="js/oauth-signature.min.js"></script>
+
+		<script src="js/map.js"></script>
+		<script src="js/app.js"></script>
+
+		<!-- Google map -->
+		<script async defer src="http://maps.googleapis.com/maps/api/js?&callback=initMap" onerror="googleError()"></script>
+
+	</body>
+</html>
